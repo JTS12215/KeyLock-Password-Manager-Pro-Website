@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyLock Password Manager Pro | Cross-Platform Data Sovereignty</title>
+    <style>
+        /* CORE STYLES - Inherited from KeyLock Corporate Standards */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --kl-blue: #0056b3;
+            --kl-dark: #333;
+            --kl-light: #f8f9fa;
+            --kl-gold: #d4af37;
+            --kl-warning: #ffc107;
+        }
+
+        body {
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--kl-dark);
+            background-color: #fff;
+        }
+
+        /* SITE STATUS ALERT BANNER */
+        .construction-banner {
+            background-color: var(--kl-warning);
+            color: #000;
+            text-align: center;
+            padding: 12px 5%;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #e0a800;
+        }
+
+        .construction-banner strong { 
+            font-weight: 800; 
+        }
+
+        /* CONSOLIDATED HEADER WRAPPER - Enforces smooth sticky tracking */
+        .header-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+        }
+
+        /* NAVIGATION - Adjusted padding and height to shift the blue line down */
+        nav {
+            background: #ffffff;
+            border-bottom: 3px solid var(--kl-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            height: 110px;
+        }
+
+        .logo-container img {
+            height: 80px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a, .dropbtn {
+            text-decoration: none;
+            color: var(--kl-dark);
+            font-weight: 700;
+            margin-left: 25px;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .dropdown:hover .dropbtn {
+            color: var(--kl-blue);
+        }
+
+        /* DROPDOWN LOGIC */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            border-top: 3px solid var(--kl-blue);
+            top: 100%;
+            left: 25px;
+            padding: 10px 0;
+        }
+
+        .dropdown-content a {
+            color: var(--kl-dark);
+            padding: 12px 20px;
+            margin: 0;
+            display: block;
+            font-size: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-content a:last-child { border-bottom: none; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* UNIVERSAL SECTION STYLING */
+        section {
+            padding: 80px 10%;
+            border-bottom: 1px solid #eee;
+            scroll-margin-top: 150px; 
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            background: linear-gradient(180deg, #fff 0%, var(--kl-light) 100%);
+            padding: 80px 10%;
+        }
+
+        .hero h1 { 
+            font-size: 3.5rem; 
+            color: #000; 
+            line-height: 1.2; 
+            margin-bottom: 20px;
+        }
+        
+        .hero p { 
+            font-size: 1.3rem; 
+            color: #555; 
+            max-width: 800px; 
+            margin: 20px auto 40px; 
+        }
+
+        /* FEATURE CARD GRID */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 40px 0;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 380px;
+            padding: 35px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #000;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .kl-highlight {
+            border-top: 5px solid var(--kl-blue);
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            background: var(--kl-blue);
+            color: white !important;
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #004494;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--kl-blue);
+            color: white;
+            text-align: center;
+            padding: 50px 10%;
+        }
+
+        footer h2 {
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* PANCAKE MENU TOGGLE CONTROLS */
+        #menu-toggle { display: none; }
+        .hamburger-icon {
+            display: none;
+            font-size: 2.2rem;
+            color: var(--kl-blue);
+            cursor: pointer;
+            user-select: none;
+            width: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .hamburger-icon::after { content: '☰'; }
+        #menu-toggle:checked + .hamburger-icon::after { content: '✕'; font-size: 2.5rem; line-height: 1;}
+
+        /* MOBILE MEDIA RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .hamburger-icon { display: block; } 
+
+            .nav-links {
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 110px; 
+                left: 0;
+                width: 100%;
+                background: #fff;
+                border-bottom: 3px solid var(--kl-blue);
+                padding: 15px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+
+            #menu-toggle:checked ~ .nav-links { display: flex; }
+
+            .nav-links a, .dropdown {
+                margin: 10px 0;
+                width: 100%;
+                text-align: left;
+            }
+
+            .nav-links a { 
+                margin-left: 0; 
+                padding-left: 20px; 
+            }
+
+            .dropbtn {
+                display: block;
+                color: var(--kl-blue);
+                margin: 10px 0 5px 0;
+                padding-left: 20px; 
+                pointer-events: none; 
+                text-align: left;
+            }
+
+            .dropdown-content {
+                display: block !important; 
+                position: static;
+                box-shadow: none;
+                border-top: none;
+                background: #fdfdfd; 
+                padding: 5px 0;
+            }
+
+            .dropdown-content a {
+                padding: 8px 0;
+                padding-left: 40px; 
+                font-size: 0.95rem;
+                color: #555;
+            }
+
+            .hero h1 { font-size: 2.4rem; } 
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <div class="header-wrapper">
+        <div class="construction-banner">
+            🚧 <strong>UNDER CONSTRUCTION:</strong> This site and KeyLock Password Manager Pro are currently under active development. <strong>Coming Soon!</strong>
+        </div>
+
+        <nav>
+            <div class="logo-container">
+                <a href="#top" onclick="document.getElementById('menu-toggle').checked=false;">
+                    <img src="KeyLock_logo_Light.png" alt="KeyLock Logo">
+                </a>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger-icon"></label>
+
+            <div class="nav-links">
+                <a href="#top">Home</a>
+                <a href="#features" onclick="document.getElementById('menu-toggle').checked=false;">Features</a>
+                <div class="dropdown">
+                    <span class="dropbtn">Resources ▾</span>
+                    <div class="dropdown-content">
+                        <a href="#" style="color: #999; cursor: default;" onclick="return false;">User Guide (Coming Soon)</a>
+                        <a href="https://github.com/JTS12215/KeyLock-Password-Manager-Pro-Website/issues" onclick="document.getElementById('menu-toggle').checked=false;">Report a Bug</a>
+                    </div>
+                </div>
+                <a href="#about" onclick="document.getElementById('menu-toggle').checked=false;">About</a>
+                <a href="https://keylocksoftware.com">Corporate Home</a>
+            </div>
+        </nav>
+    </div>
+
+    <header id="home" class="hero">
+        <span style="background: var(--kl-blue); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+            Next-Generation Production Engine
+        </span>
+        <h1>Sovereign Control.<br>Hardened Cross-Platform Security.</h1>
+        <p>KeyLock Password Manager Pro brings defense-in-depth protection directly to your local environments and across your devices. Zero centralized clouds. Absolute cryptographic authority.</p>
+
+        <a href="#features" class="btn">Explore Pro Architecture</a>
+    </header>
+
+    <section id="features" style="text-align: center;">
+        <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 10px;">The Pro Cryptographic Stack</h2>
+        <p style="color: #666; max-width: 700px; margin: 0 auto 30px;">Engineered to ensure your records remain mathematically unassailable, regardless of where your database file is stored.</p>
+        
+        <div class="feature-grid">
+            <div class="card kl-highlight">
+                <h3>AES-256-GCM Encrypted</h3>
+                <p>Utilizes advanced Authenticated Encryption with Associated Data (AEAD) in Galois/Counter Mode. This architecture provides high-entropy data concealment while guaranteeing that your database payload cannot be altered or tampered with by external actors.</p>
+            </div>
+            <div class="card kl-highlight">
+                <h3>Argon2id Key Derivation</h3>
+                <p>Employs the industry-standard, memory-hard hashing mechanism specifically configured with auto-scaling layers. This function delivers exceptional defense thresholds against GPU, ASIC, and distributed cluster brute-force vectors.</p>
+            </div>
+            <div class="card kl-highlight">
+                <h3>HKDF Cryptographic Separation</h3>
+                <p>Implements HMAC-based Extract-and-Expand Key Derivation Function paths. By splitting your master credential into dedicated, independent keys for data transformation and verification paths, cross-key leakage risks are eliminated.</p>
+            </div>
+            <div class="card kl-highlight">
+                <h3>AAD Metadata Binding</h3>
+                <p>Binds structural metadata components (including indexing structures and version schemas) securely to the encrypted payload using Authenticated Additional Data boundaries. This completely mitigates structural blocks and block-swapping threats.</p>
+            </div>
+            <div class="card kl-highlight">
+                <h3>Zero-Knowledge Local-First</h3>
+                <p>Encryption transformations happen exclusively on your device before writing to the SQLite database frame. No server keys, no company records, no backdoor mechanics. You are the sole custodian of your digital identity.</p>
+            </div>
+            <div class="card kl-highlight">
+                <h3>Sovereign Cloud Syncing</h3>
+                <p>Full native and cross-device compatibility built directly into the file engine. Securely manage, read, and write encrypted local vaults across Windows desktop platforms, Apple iOS, and Android ecosystems utilizing your personal public storage nodes.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="about">
+        <h2>KeyLock Password Manager Pro</h2>
+        <p style="max-width: 800px; margin: 15px auto 25px; font-size: 0.95rem; opacity: 0.9;">
+            KeyLock Pro is a premium data sovereignty product engineered by KeyLock Software. We specialize in producing local-first utilities that ensure personal parameters, transactional histories, and credential systems remain private and under user authority.
+        </p>
+        <div style="margin-bottom: 25px;">
+            <a href="#" style="color: #bbb; cursor: default;" onclick="return false;">Privacy Policy (Pending Review)</a> |
+            <a href="#" style="color: #bbb; cursor: default;" onclick="return false;">Terms & Conditions (Pending Review)</a>
+        </div>
+        <p style="font-size: 0.8rem; opacity: 0.7;">
+            &copy; 2026 John Stone dba KeyLock Software | All Rights Reserved
+        </p>
+    </footer>
+
+</body>
+</html>
