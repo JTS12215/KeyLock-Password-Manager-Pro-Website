@@ -31,25 +31,34 @@
             background-color: #fff;
         }
 
-        /* NAVIGATION - Unified Sticky Layout with 4px Border */
+        /* NAVIGATION - Unified Sticky Layout with Fixed Border Clearance */
         nav {
             background: #ffffff;
             border-bottom: 4px solid var(--kl-blue);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 4.5%;
+            padding: 0 4.5%;
             height: 110px;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo-container a {
+            display: block;
+        }
+
         .logo-container img {
-            height: 110px;
+            height: 85px; /* Scaled down slightly to guarantee clean clearance above the 4px line */
             width: auto;
             display: block;
-            margin-top: 10px;
         }
 
         .nav-links {
@@ -187,16 +196,6 @@
             background: #004494;
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--kl-blue) !important;
-            border: 2px solid var(--kl-blue);
-        }
-
-        .btn-outline:hover {
-            background: var(--kl-light);
-        }
-
         /* FOOTER */
         footer {
             background: var(--kl-blue);
@@ -321,7 +320,7 @@
                 </div>
             </div>
             <a href="#about" onclick="document.getElementById('menu-toggle').checked=false;">About</a>
-            <a href="https://keylocksoftware.com" class="btn-outline" style="padding: 10px 20px; border-radius: 5px; margin-left: 20px;">Corporate Home</a>
+            <a href="https://keylocksoftware.com">Corporate Home</a>
         </div>
     </nav>
 
@@ -333,7 +332,6 @@
         <p>KeyLock Password Manager Pro brings defense-in-depth protection directly to your local environments and across your devices. Zero centralized clouds. Absolute cryptographic authority.</p>
 
         <a href="#features" class="btn">Explore Pro Architecture</a>
-        <a href="https://keylocksoftware.com#products" class="btn btn-outline">View Product Ecosystem</a>
     </header>
 
     <section id="features" style="text-align: center;">
@@ -375,8 +373,7 @@
         </p>
         <div style="margin-bottom: 25px;">
             <a href="#" style="color: #bbb; cursor: default;" onclick="return false;">Privacy Policy (Pending Review)</a> |
-            <a href="#" style="color: #bbb; cursor: default;" onclick="return false;">Terms & Conditions (Pending Review)</a> |
-            <a href="https://github.com/JTS12215" target="_blank">Developer Profile</a>
+            <a href="#" style="color: #bbb; cursor: default;" onclick="return false;">Terms & Conditions (Pending Review)</a>
         </div>
         <p style="font-size: 0.8rem; opacity: 0.7;">
             &copy; 2026 John Stone dba KeyLock Software | All Rights Reserved
