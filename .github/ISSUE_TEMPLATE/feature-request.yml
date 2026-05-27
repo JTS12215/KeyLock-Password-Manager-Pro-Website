@@ -1,0 +1,67 @@
+name: 🚀 KeyLock PRO Feature Request
+description: Propose a new feature, workflow optimization, or tool enhancement for the production engine.
+title: "[Feature Request]: "
+labels: ["enhancement", "desktop-triage"]
+body:
+  # 1. User Contact Blocks
+  - type: input
+    id: first-name
+    attributes:
+      label: First Name
+      placeholder: "e.g., John"
+    validations:
+      required: true
+
+  - type: input
+    id: last-name
+    attributes:
+      label: Last Name
+      placeholder: "e.g., Stone"
+    validations:
+      required: true
+
+  - type: input
+    id: user-email
+    attributes:
+      label: Email Address
+      placeholder: "e.g., user@example.com"
+    validations:
+      required: true
+
+  # 2. Automated Diagnostic Blocks
+  - type: input
+    id: app-version
+    attributes:
+      label: Application Version
+      placeholder: "Auto-populated by client application"
+    validations:
+      required: true
+
+  - type: input
+    id: build-number
+    attributes:
+      label: Build Number / Build Date
+      placeholder: "Auto-populated by client application"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System / Environment
+      description: This field auto-selects your environment but can be modified manually if cross-proposing.
+      options:
+        - Windows Desktop
+        - macOS
+        - Linux
+    validations:
+      required: true
+
+  # 3. User Narrative Blocks
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Describe Your Feature Proposal
+      placeholder: "Please describe the enhancement you would like to see. How should it work, and what problem does it solve for your workflow?"
+    validations:
+      required: true
