@@ -41,7 +41,7 @@ body:
   - type: input
     id: build-number
     attributes:
-      label: Build Number / Build Date
+      label: Build Number Build Date
       description: If launching from the website, please open KeyLock PRO and go to Help > About to find your Build Number / Build Date.
       placeholder: "e.g., " Build Number: 101 / Build Date: May 2026"
     validations:
