@@ -33,7 +33,8 @@ body:
     id: app-version
     attributes:
       label: Application Version
-      placeholder: "Auto-populated by client application"
+      description: If launching this form from the website, please open KeyLock PRO and go to Help > About to find your version number.
+      placeholder: "e.g., 2.0.0"
     validations:
       required: true
 
@@ -41,7 +42,8 @@ body:
     id: build-number
     attributes:
       label: Build Number / Build Date
-      placeholder: "Auto-populated by client application"
+      description: If launching this form from the website, please open KeyLock PRO and go to Help > About to find your Build Number / Build Date.
+      placeholder: "e.g., Build Number: 101 / Build Date: May 2026"
     validations:
       required: true
 
