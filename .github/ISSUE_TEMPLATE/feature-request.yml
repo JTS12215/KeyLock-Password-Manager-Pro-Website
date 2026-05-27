@@ -16,7 +16,7 @@ body:
     id: last-name
     attributes:
       label: Last Name
-      placeholder: "e.g., Stone"
+      placeholder: "e.g., Smith"
     validations:
       required: true
 
