@@ -23,6 +23,8 @@
             --kl-light: #f8f9fa;
             --kl-gold: #d4af37;
             --kl-warning: #ffc107;
+            --kl-steelblue: #4682B4;
+            --kl-steelblue-hover: #36648B;
         }
 
         body {
@@ -148,6 +150,30 @@
             margin: 20px auto 40px; 
         }
 
+        /* DOWNLOAD SECTION STYLES */
+        .download-section {
+            background-color: var(--kl-light);
+            text-align: center;
+            padding: 60px 10%;
+        }
+
+        .download-card {
+            background: #fff;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eef0f2;
+        }
+
+        .version-meta {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
         /* FEATURE CARD GRID */
         .feature-grid {
             display: flex;
@@ -204,6 +230,16 @@
 
         .btn:hover {
             background: #004494;
+        }
+
+        /* Steel Blue Download Button Modification */
+        .btn-download {
+            background: var(--kl-steelblue);
+            margin-top: 20px;
+        }
+
+        .btn-download:hover {
+            background: var(--kl-steelblue-hover);
         }
 
         /* FOOTER */
@@ -326,6 +362,7 @@
 
             <div class="nav-links">
                 <a href="#top">Home</a>
+                <a href="#download" onclick="document.getElementById('menu-toggle').checked=false;">Download</a>
                 <a href="#features" onclick="document.getElementById('menu-toggle').checked=false;">Features</a>
                 <div class="dropdown">
                     <span class="dropbtn">Resources ▾</span>
@@ -347,8 +384,26 @@
         <h1>Sovereign Control.<br>Hardened Cross-Platform Security.</h1>
         <p>KeyLock Password Manager Pro brings defense-in-depth protection directly to your local environments and across your devices. Zero centralized clouds. Absolute cryptographic authority.</p>
 
-        <a href="#features" class="btn">Explore Pro Architecture</a>
+        <a href="#download" class="btn">Get KeyLock PRO</a>
     </header>
+
+    <!-- NEW DISTRIBUTION SECTION -->
+    <section id="download" class="download-section">
+        <div class="download-card">
+            <h2 style="color: #000; font-size: 1.8rem; margin-bottom: 10px;">Production Environments</h2>
+            <p style="color: #555; font-size: 1rem;">Deploy the standalone KeyLock PRO core client directly to your local Windows system.</p>
+            
+            <!-- Steel Blue Placeholder Link (Safe block state) -->
+            <a href="#" class="btn waves-effect waves-light btn-download" onclick="alert('KeyLock PRO Production Installer is currently being finalized. Check back soon!'); return false;">
+                Download for Windows
+            </a>
+            
+            <!-- Essential Python Scraper Hook Block -->
+            <div class="version-meta">
+                Production Architecture: v<span id="latest-version">2.0.0</span>
+            </div>
+        </div>
+    </section>
 
     <section id="features" style="text-align: center;">
         <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 10px;">The Pro Cryptographic Stack</h2>
