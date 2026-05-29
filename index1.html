@@ -22,6 +22,9 @@
             --kl-dark: #333;
             --kl-light: #f8f9fa;
             --kl-gold: #d4af37;
+            --kl-warning: #ffc107;
+            --kl-steelblue: #4682B4;
+            --kl-steelblue-hover: #36648B;
         }
 
         body {
@@ -31,22 +34,41 @@
             background-color: #fff;
         }
 
-        /* NAVIGATION - Exact duplicate of free.keylocksoftware.com specifications */
+        /* SITE STATUS ALERT BANNER */
+        .construction-banner {
+            background-color: var(--kl-warning);
+            color: #000;
+            text-align: center;
+            padding: 12px 5%;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #e0a800;
+        }
+
+        .construction-banner strong { 
+            font-weight: 800; 
+        }
+
+        /* CONSOLIDATED HEADER WRAPPER - Enforces smooth sticky tracking */
+        .header-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+        }
+
+        /* NAVIGATION - Adjusted padding and height to shift the blue line down */
         nav {
             background: #ffffff;
             border-bottom: 3px solid var(--kl-blue);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 5%;
-            height: 120px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 15px 5%;
+            height: 110px;
         }
 
         .logo-container img {
-            height: 110px;
+            height: 80px;
             width: auto;
             display: block;
         }
@@ -104,7 +126,7 @@
         section {
             padding: 80px 10%;
             border-bottom: 1px solid #eee;
-            scroll-margin-top: 110px; 
+            scroll-margin-top: 150px; 
         }
 
         /* HERO SECTION */
@@ -126,6 +148,30 @@
             color: #555; 
             max-width: 800px; 
             margin: 20px auto 40px; 
+        }
+
+        /* DOWNLOAD SECTION STYLES */
+        .download-section {
+            background-color: var(--kl-light);
+            text-align: center;
+            padding: 60px 10%;
+        }
+
+        .download-card {
+            background: #fff;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eef0f2;
+        }
+
+        .version-meta {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 10px;
+            font-weight: 600;
         }
 
         /* FEATURE CARD GRID */
@@ -186,6 +232,16 @@
             background: #004494;
         }
 
+        /* Steel Blue Download Button Modification */
+        .btn-download {
+            background: var(--kl-steelblue);
+            margin-top: 20px;
+        }
+
+        .btn-download:hover {
+            background: var(--kl-steelblue-hover);
+        }
+
         /* FOOTER */
         footer {
             background: var(--kl-blue);
@@ -234,7 +290,7 @@
                 display: none; 
                 flex-direction: column;
                 position: absolute;
-                top: 100px; 
+                top: 110px; 
                 left: 0;
                 width: 100%;
                 background: #fff;
@@ -289,30 +345,38 @@
 
 <body id="top">
 
-    <nav>
-        <div class="logo-container">
-            <a href="#top" onclick="document.getElementById('menu-toggle').checked=false;">
-                <img src="KeyLock_logo_Light.png" alt="KeyLock Logo">
-            </a>
+    <div class="header-wrapper">
+        <div class="construction-banner">
+            🚧 <strong>UNDER CONSTRUCTION:</strong> This site and KeyLock Password Manager Pro are currently under active development. <strong>Coming Soon!</strong>
         </div>
-        
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="hamburger-icon"></label>
 
-        <div class="nav-links">
-            <a href="#top">Home</a>
-            <a href="#features" onclick="document.getElementById('menu-toggle').checked=false;">Features</a>
-            <div class="dropdown">
-                <span class="dropbtn">Resources ▾</span>
-                <div class="dropdown-content">
-                    <a href="#" style="color: #999; cursor: default;" onclick="return false;">User Guide (Coming Soon)</a>
-                    <a href="https://github.com/JTS12215/KeyLock-Password-Manager-Pro-Website/issues" onclick="document.getElementById('menu-toggle').checked=false;">Report a Bug</a>
-                </div>
+        <nav>
+            <div class="logo-container">
+                <a href="#top" onclick="document.getElementById('menu-toggle').checked=false;">
+                    <img src="keylock_pro_logo.png" alt="KeyLock Logo">
+                </a>
             </div>
-            <a href="#about" onclick="document.getElementById('menu-toggle').checked=false;">About</a>
-            <a href="https://keylocksoftware.com">Corporate Home</a>
-        </div>
-    </nav>
+            
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger-icon"></label>
+
+            <div class="nav-links">
+                <a href="#top">Home</a>
+                <a href="#download" onclick="document.getElementById('menu-toggle').checked=false;">Download</a>
+                <a href="#features" onclick="document.getElementById('menu-toggle').checked=false;">Features</a>
+                <div class="dropdown">
+                    <span class="dropbtn">Resources ▾</span>
+                    <div class="dropdown-content">
+                        <a href="#" style="color: #999; cursor: default;" onclick="return false;">User Guide (Coming Soon)</a>
+                        <a href="https://github.com/JTS12215/KeyLock-Password-Manager-Pro-Website/issues/new?template=bug-report.yml" onclick="document.getElementById('menu-toggle').checked=false;">Report a Bug</a>
+                        <a href="https://github.com/JTS12215/KeyLock-Password-Manager-Pro-Website/issues/new?template=feature-request.yml" onclick="document.getElementById('menu-toggle').checked=false;">Request a Feature</a>
+                    </div>
+                </div>
+                <a href="#about" onclick="document.getElementById('menu-toggle').checked=false;">About</a>
+                <a href="https://keylocksoftware.com">KeyLock Software</a>
+            </div>
+        </nav>
+    </div>
 
     <header id="home" class="hero">
         <span style="background: var(--kl-blue); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
@@ -321,8 +385,26 @@
         <h1>Sovereign Control.<br>Hardened Cross-Platform Security.</h1>
         <p>KeyLock Password Manager Pro brings defense-in-depth protection directly to your local environments and across your devices. Zero centralized clouds. Absolute cryptographic authority.</p>
 
-        <a href="#features" class="btn">Explore Pro Architecture</a>
+        <a href="#download" class="btn">Get KeyLock PRO</a>
     </header>
+
+    <!-- NEW DISTRIBUTION SECTION -->
+    <section id="download" class="download-section">
+        <div class="download-card">
+            <h2 style="color: #000; font-size: 1.8rem; margin-bottom: 10px;">Production Environments</h2>
+            <p style="color: #555; font-size: 1rem;">Deploy the standalone KeyLock PRO core client directly to your local Windows system.</p>
+            
+            <!-- Steel Blue Placeholder Link (Safe block state) -->
+            <a href="#" class="btn waves-effect waves-light btn-download" onclick="alert('KeyLock PRO Production Installer is currently being finalized. Check back soon!'); return false;">
+                Download for Windows
+            </a>
+            
+            <!-- Essential Python Scraper Hook Block -->
+            <div class="version-meta">
+                Production Architecture: v<span id="latest-version">2.0.0</span>
+            </div>
+        </div>
+    </section>
 
     <section id="features" style="text-align: center;">
         <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 10px;">The Pro Cryptographic Stack</h2>
