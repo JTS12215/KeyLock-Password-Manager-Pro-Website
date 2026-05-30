@@ -174,6 +174,33 @@
             font-weight: 600;
         }
 
+        /* SCREENSHOTS / GALLERY */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            flex: 1;
+            min-width: 350px;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item p { margin-top: 15px; font-weight: 600; color: #555; }
+        
         /* FEATURE CARD GRID */
         .feature-grid {
             display: flex;
