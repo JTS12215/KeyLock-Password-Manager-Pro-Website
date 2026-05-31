@@ -9,6 +9,7 @@
         /* CORE STYLES - Inherited from KeyLock Corporate Standards */
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 110px; /* Ensures anchor links clear the tracking layout */
         }
         
         * {
@@ -122,20 +123,52 @@
         .dropdown-content a:last-child { border-bottom: none; }
         .dropdown:hover .dropdown-content { display: block; }
 
-        /* UNIVERSAL SECTION STYLING */
-        section {
-            padding: 80px 10%;
-            border-bottom: 1px solid #eee;
-            scroll-margin-top: 150px; 
-        }
-
-        /* HERO SECTION */
+        /* GRADUATED GRADIENT FLOW ARCHITECTURE */
+        
+        /* 1. Hero: White -> Light Gray/Blue Tint */
         .hero {
             text-align: center;
             background: linear-gradient(180deg, #fff 0%, var(--kl-light) 100%);
             padding: 80px 10%;
         }
 
+        /* 2. Download: Pure White Base Layout */
+        .download-section {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 80px 10%;
+        }
+
+        /* 3. Features: White -> Light Gray/Blue Tint */
+        .features-section {
+            text-align: center;
+            background: linear-gradient(180deg, #fff 0%, var(--kl-light) 100%);
+            padding: 80px 10%;
+        }
+
+        /* 4. Screenshots: Pure White Base Layout */
+        .screenshots-section {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 80px 10%;
+        }
+
+        /* 5. Mission/About: White -> Light Gray/Blue Tint */
+        .about-section {
+            background: linear-gradient(180deg, #fff 0%, var(--kl-light) 100%);
+            padding: 80px 10%;
+        }
+
+        /* 6. Footer: Graduated upward to light accent to complete the wave */
+        footer {
+            background: linear-gradient(180deg, #ffffff 0%, var(--kl-light) 50%);
+            border-top: 3px solid var(--kl-blue);
+            color: var(--kl-dark);
+            text-align: center;
+            padding: 50px 10%;
+        }
+
+        /* CONTENT COMPONENT STYLES */
         .hero h1 { 
             font-size: 3.5rem; 
             color: #000; 
@@ -148,13 +181,6 @@
             color: #555; 
             max-width: 800px; 
             margin: 20px auto 40px; 
-        }
-
-        /* DOWNLOAD SECTION STYLES */
-        .download-section {
-            background-color: var(--kl-light);
-            text-align: center;
-            padding: 60px 10%;
         }
 
         .download-card {
@@ -259,6 +285,12 @@
             background: #004494;
         }
 
+        .btn-outline {
+            background: transparent;
+            color: var(--kl-blue) !important;
+            border: 2px solid var(--kl-blue);
+        }
+
         /* Steel Blue Download Button Modification */
         .btn-download {
             background: var(--kl-steelblue);
@@ -269,28 +301,45 @@
             background: var(--kl-steelblue-hover);
         }
 
-        /* FOOTER */
-        footer {
-            background: var(--kl-blue);
-            color: white;
-            text-align: center;
-            padding: 50px 10%;
+        /* FOOTER BRANDING AND TEXT TIMING */
+        footer h2 {
+            margin-bottom: 5px;
+            color: var(--kl-blue);
         }
 
-        footer h2 {
-            margin-bottom: 15px;
+        .footer-subtitle {
+            margin: 2px 0 20px 0;
+            color: #555;
+            font-weight: 500;
+            font-size: 0.95rem;
         }
 
         footer a {
-            color: white;
+            color: var(--kl-dark);
             text-decoration: none;
+            font-weight: 600;
             margin: 0 10px;
-            font-size: 0.9rem;
-            opacity: 0.9;
+            font-size: 0.95rem;
         }
 
         footer a:hover {
+            color: var(--kl-blue);
             text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-copyright {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #555;
+            font-weight: 500;
         }
 
         /* PANCAKE MENU TOGGLE CONTROLS */
@@ -365,7 +414,10 @@
             }
 
             .hero h1 { font-size: 2.4rem; } 
-            section { padding: 60px 5%; }
+            .download-section, .features-section, .screenshots-section, .about-section { padding: 60px 5%; }
+            
+            footer h2 { font-size: 1.5rem; }
+            .footer-links { font-size: 0.85rem; gap: 8px; }
         }
     </style>
 </head>
@@ -380,7 +432,7 @@
         <nav>
             <div class="logo-container">
                 <a href="#top" onclick="document.getElementById('menu-toggle').checked=false;">
-                    <img src="keylock_pro_logo.png" alt="KeyLock Logo">
+                    <img src="KeyLock_logo_Light.png" alt="KeyLock Logo">
                 </a>
             </div>
             
@@ -413,28 +465,26 @@
         </span>
         <h1>Sovereign Control.<br>Hardened Cross-Platform Security.</h1>
         <p><span style="color: var(--kl-blue); font-weight: bold;">KeyLock Password Manager Pro</span> brings defense-in-depth protection directly to your local environments and across your devices. Zero centralized clouds. Absolute cryptographic authority.</p>
+        <a href="#features" class="btn">Explore Pro Architecture</a>
     </header>
-                
-    <!-- NEW DISTRIBUTION SECTION -->
-        <section id="download" class="download-section">
-        <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 10px;">Download KeyLock Password Manager PRO</h2>
+            
+    <section id="download" class="download-section">
+        <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 25px;">Download KeyLock Password Manager PRO</h2>
         <div class="download-card">
             <h2 style="color: #000; font-size: 1.8rem; margin-bottom: 10px;">Production Environments</h2>
             <p style="color: #555; font-size: 1rem;">Deploy the standalone KeyLock Password Manager PRO core client directly to your local Windows system.</p>
             
-            <!-- Steel Blue Placeholder Link (Safe block state) -->
             <a href="#" class="btn waves-effect waves-light btn-download" onclick="alert('KeyLock Password Manager PRO Production Installer is currently being finalized. Check back soon!'); return false;">
                 Download for Windows
             </a>
             
-            <!-- Essential Python Scraper Hook Block -->
             <div class="version-meta">
                 Production Architecture: v<span id="latest-version">2.0.0</span>
             </div>
         </div>
     </section>
 
-    <section id="features" style="text-align: center;">
+    <section id="features" class="features-section">
         <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 10px;">The Pro Cryptographic Stack</h2>
         <p style="color: #666; max-width: 700px; margin: 0 auto 30px;">Engineered to ensure your records remain mathematically unassailable, regardless of where your database file is stored.</p>
         
@@ -466,9 +516,9 @@
         </div>
     </section>
 
-     <section id="screenshots" style="text-align: center;">
-        <h1 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 10px;">Screenshots</h1>
-        <p>A closer look at the KeyLock user experience.</p>
+    <section id="screenshots" class="screenshots-section">
+        <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 10px;">Screenshots</h2>
+        <p style="color: #666; margin-bottom: 20px;">A closer look at the KeyLock user experience.</p>
         <div class="gallery-container">
             <div class="gallery-item"><img src="./docs/media/KeyLock_Pro_Main_Screen.png" alt="Dashboard"><p>Main Dashboard</p></div>
             <div class="gallery-item"><img src="./docs/media/Login_Screen.png" alt="Login"><p>Login Screen</p></div>
@@ -479,30 +529,32 @@
         </div>
     </section>
 
-     <section id="about" style="max-width: 900px; margin: 0 auto;">
-        <h1 style="color: var(--kl-blue); font-size: 2.5rem; margin-bottom: 30px;">The KeyLock Mission</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 20px;">
-            In an era where personal data is treated as a commodity, KeyLock was born from a simple necessity:
-            <strong>Absolute Data Sovereignty.</strong>
-        </p>
-        <h3 style="margin: 30px 0 15px; color: var(--kl-blue);">Why Local-First?</h3>
-        <p>KeyLock Password Manager Pro is a premium data sovereignty product engineered by KeyLock Software. Your data should never be a target. By removing the centralized
-            commercial cloud, we remove the incentive for hackers. Your vault is your own. Whether you keep it on a
-            local machine, thumb drive, Google or Dropbox, you are the only one with the key.</p>
-        <h3 style="margin: 30px 0 15px; color: var(--kl-blue);">Windows Desktop Version</h3>
-        <p>KeyLock Password Manager Pro get started today by visiting the Getting Started Guide and the User Manual.</p>
+    <section id="about" class="about-section" style="max-width: 100%; margin: 0 auto;">
+        <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+            <h1 style="color: var(--kl-blue); font-size: 2.5rem; margin-bottom: 30px; text-align: center;">The KeyLock Mission</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 20px; text-align: center;">
+                In an era where personal data is treated as a commodity, KeyLock was born from a simple necessity:
+                <strong>Absolute Data Sovereignty.</strong>
+            </p>
+            <h3 style="margin: 30px 0 15px; color: var(--kl-blue);">Why Local-First?</h3>
+            <p>KeyLock Password Manager Pro is a premium data sovereignty product engineered by KeyLock Software. Your data should never be a target. By removing the centralized commercial cloud, we remove the incentive for hackers. Your vault is your own. Whether you keep it on a local machine, thumb drive, Google or Dropbox, you are the only one with the key.</p>
+            <h3 style="margin: 30px 0 15px; color: var(--kl-blue);">Windows Desktop Version</h3>
+            <p>KeyLock Password Manager Pro get started today by visiting the Getting Started Guide and the User Manual.</p>
+        </div>
     </section>
 
     <footer id="footer">
         <h2>KeyLock Password Manager Pro</h2>
         <p class="footer-subtitle">by <a href="https://keylocksoftware.com">KeyLock Software</a></p>
-    <br>
         
-        <div style="margin-bottom: 25px;">
-            <a href="#" style="color: #bbb; cursor: default;" onclick="return false;">Privacy Policy (Pending Review)</a> |
-            <a href="#" style="color: #bbb; cursor: default;" onclick="return false;">Terms & Conditions (Pending Review)</a>
+        <div class="footer-links">
+            <a href="#" style="color: #777; cursor: default;" onclick="return false;">Privacy Policy (Pending Review)</a>
+            <span style="color:#ccc;">|</span>
+            <a href="#" style="color: #777; cursor: default;" onclick="return false;">Terms & Conditions (Pending Review)</a>
+            <span style="color:#ccc;">|</span>
+            <a href="#top">Back to Top</a>
         </div>
-        <p style="font-size: 0.8rem; opacity: 0.7;">
+        <p class="footer-copyright">
             &copy; 2026 John Stone dba KeyLock Software | All Rights Reserved
         </p>
     </footer>
