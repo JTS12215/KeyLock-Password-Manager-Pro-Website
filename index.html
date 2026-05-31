@@ -337,6 +337,18 @@
             font-size: 1rem;
         }
 
+        .faq-content-block strong {
+            color: #000;
+        }
+
+        .faq-content-block ul, .faq-content-block ol {
+            margin: 10px 0 15px 25px;
+        }
+
+        .faq-content-block ul li, .faq-content-block ol li {
+            margin-bottom: 6px;
+        }
+
         .faq-item,
         .faq-item summary,
         .faq-item .faq-content-block {
@@ -549,6 +561,7 @@
         </nav>
     </div>
 
+    <!-- SECTION 1: HERO (GRADIENT CONTAINER) -->
     <header id="home" class="hero">
         <span style="background: var(--kl-blue); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
             Next-Generation Production Engine
@@ -558,6 +571,7 @@
         <a href="#features" class="btn">Explore Pro Architecture</a>
     </header>
             
+    <!-- SECTION 2: DOWNLOAD (WHITE CONTAINER) -->
     <section id="download" class="download-section">
         <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 25px;">Download KeyLock Password Manager PRO</h2>
         <div class="download-card">
@@ -574,6 +588,7 @@
         </div>
     </section>
 
+    <!-- SECTION 3: FEATURES (GRADIENT CONTAINER) -->
     <section id="features" class="features-section">
         <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 10px;">The Pro Cryptographic Stack</h2>
         <p style="color: #666; max-width: 700px; margin: 0 auto 30px;">Engineered to ensure your records remain mathematically unassailable, regardless of where your database file is stored.</p>
@@ -606,6 +621,7 @@
         </div>
     </section>
 
+    <!-- SECTION 4: SCREENSHOTS (WHITE CONTAINER) -->
     <section id="screenshots" class="screenshots-section">
         <h2 style="font-size: 2.5rem; color: var(--kl-blue); margin-bottom: 10px;">Screenshots</h2>
         <p style="color: #666; margin-bottom: 20px;">A closer look at the KeyLock user experience.</p>
@@ -619,28 +635,63 @@
         </div>
     </section>
 
+    <!-- SECTION 5: FAQ & SETUP (GRADIENT CONTAINER) -->
     <section id="faq" class="faq-section">
         <h2>Support & FAQ</h2>
         <div class="faq-wrapper">
             
             <details class="faq-item">
+                <summary>How do I setup my initial database (.db)?</summary>
+                <div class="faq-content-block">
+                    To preserve your local-first sovereignty, KeyLock Pro establishes its default database file path inside your local <strong>My Documents/KeyLock Databases/</strong> folder path. However, if you plan to access your records via the companion mobile apps on Apple iOS or Android alongside your Windows Desktop client, you should locate your newly created <code>.db</code> file directly within a monitored public cloud folder node—such as your personal Apple iCloud Drive, Dropbox, or Google Drive directory.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How does Cloud Sync work?</summary>
+                <div class="faq-content-block">
+                    Because KeyLock Pro is built on a zero-server framework, cross-device synchronization relies completely on your personal cloud nodes. When you update a record on your Windows machine, your file provider handles uploading the mutated database file. When you open the application on your mobile device, it opens and decrypts the latest cloud variant in runtime memory. Embedded AAD transaction timestamps execute a smooth conflict check if items change concurrently.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I import my data from other Password Managers?</summary>
+                <div class="faq-content-block">
+                    Migration to KeyLock Pro is fast and streamlined:
+                    <ol>
+                        <li><strong>Export:</strong> Initiate an unencrypted export from your legacy password manager strictly into a standard <strong>CSV file</strong>.</li>
+                        <li><strong>Auto-Mapping:</strong> Open KeyLock Pro, navigate to the Import tool, and select the file. The client intelligently reads columns like "Login" or "Pass" and assigns them to native KeyLock database fields.</li>
+                        <li><strong>Refine:</strong> Use the interactive dropdown layout to fine-tune fields manually. For unstructured components that don't match, you can select to safely discard them or choose to append the entries directly to the scrollable Notes field.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I Export my .db?</summary>
+                <div class="faq-content-block">
+                    KeyLock Pro lets you run manual data extractions into either standard unencrypted <strong>CSV spreadsheets</strong> or <strong>Plain Text (.txt) formats</strong>. This is highly useful for running system data edits or generating offline backups. <br><br>
+                    ⚠️ <strong>CRITICAL WARNING:</strong> Exported files strip away the cryptographic layer and save your plain text credentials in the clear. Always save unencrypted files to an offline hardware layer like a secure USB node or erase them immediately after use.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I backup my .db?</summary>
+                <div class="faq-content-block">
+                    To guard your data framework against device failure, click <strong>Database &gt; Backup</strong>. This opens a file save prompt that pre-populates an encrypted backup string matching your current data structures. KeyLock Pro processes and seals your historical files into a uniquely stamped, high-entropy **`.enc` backup container**, which can safely be stored in your third-party public cloud hubs.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I restore a .db file?</summary>
+                <div class="faq-content-block">
+                    If you deploy onto a new environment or need to revert an accidental edit, select <strong>Database &gt; Restore From Backup</strong>. Navigate to your protected directory and select your targeted **`.enc` backup container**. Because the payload retains the strict Zero-Knowledge security boundaries of your original data frame, <strong>you must provide the exact Master Password</strong> used at the moment of backup creation to unlock and process the file swap.
+                </div>
+            </details>
+
+            <details class="faq-item">
                 <summary>What makes KeyLock Password Manager Pro different from legacy versions?</summary>
                 <div class="faq-content-block">
                     The core engine has been completely rewritten from the ground up to achieve high-performance <strong>Cross-Platform Interoperability</strong>. KeyLock Pro replaces legacy Python-bound Fernet wrappers with universally recognized hardware-accelerated encryption algorithms. This migration unlocks native, cross-platform performance across Windows Desktops, Apple iOS platforms, and Android environments using a standardized secure JSON database frame.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>How does the "Bring Your Own Cloud" (BYOC) data engine function?</summary>
-                <div class="faq-content-block">
-                    KeyLock Pro adheres to a strict <strong>local-first execution template</strong>. We do not operate host servers or maintain database storage layers. Your encrypted database file resides completely within your personal storage space (such as iCloud, Google Drive, Dropbox, or OneDrive). The Desktop and Mobile companion apps stream, mutate, and evaluate these local nodes strictly inside volatile device memory boundaries.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>What happens to my old entries when migrating from the legacy open-source app?</summary>
-                <div class="faq-content-block">
-                    Migration is completely automated and safe. When you launch the <strong>Windows Desktop Pro client</strong> and point it to your legacy SQLite database file, the application detects the legacy Fernet structures on the fly. Upon confirming your identity with your Master Password, the engine completely decrypts your assets and instantly rebuilds, saves, and hardens the payload using the new AES-256-GCM schema without losing data.
                 </div>
             </details>
 
@@ -650,17 +701,11 @@
                     Because KeyLock Pro treats user privacy as absolute, the system operates with zero backdoors or remote administration access. Your Master Password is transformed directly into an encryption key via memory-hard Argon2id parameters. <strong>We do not maintain registration keys or password logs.</strong> If you lose your Master Password, recovery is mathematically impossible. We strongly advise storing a physical copy of your Master Password in a secure, fireproof safe.
                 </div>
             </details>
-
-            <details class="faq-item">
-                <summary>How does multi-device synchronization handle concurrent file access conflicts?</summary>
-                <div class="faq-content-block">
-                    Since data transitions occur within your personal public storage accounts, your selected cloud platform handles baseline background file changes. To protect structural integrity during concurrent edits, KeyLock Pro embeds <strong>AAD-bound transactional timestamps</strong> directly into the database metadata layers, executing a modern "last-write-wins" parsing protocol that keeps files synchronized smoothly across all devices.
-                </div>
-            </details>
             
         </div>
     </section>
 
+    <!-- SECTION 6: MISSION/ABOUT (WHITE CONTAINER) -->
     <section id="about" class="about-section" style="max-width: 100%; margin: 0 auto;">
         <div style="max-width: 900px; margin: 0 auto; text-align: left;">
             <h1 style="color: var(--kl-blue); font-size: 2.5rem; margin-bottom: 30px; text-align: center;">The KeyLock Mission</h1>
@@ -675,6 +720,7 @@
         </div>
     </section>
 
+    <!-- FOOTER (INTENSIFIED GRADIENT WAVE ANCHOR) -->
     <footer id="footer">
         <h2>KeyLock Password Manager Pro</h2>
         <p class="footer-subtitle">by <a href="https://keylocksoftware.com">KeyLock Software</a></p>
