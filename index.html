@@ -127,7 +127,7 @@
 
         /* GRADUATED BLUE GRADIENT FLOW ARCHITECTURE (MATCHED TO MYGOLF 50% RATIO) */
         
-        /* 1. Hero: Pure White -> Brand Blue Tint (Tighter Midpoint Mix) */
+        /* 1. Hero: Pure White -> Brand Blue Tint */
         .hero {
             text-align: center;
             background: linear-gradient(180deg, #ffffff 0%, var(--kl-blue-tint) 50%);
@@ -141,7 +141,7 @@
             padding: 80px 10%;
         }
 
-        /* 3. Features: Pure White -> Brand Blue Tint (Tighter Midpoint Mix) */
+        /* 3. Features: Pure White -> Brand Blue Tint */
         .features-section {
             text-align: center;
             background: linear-gradient(180deg, #ffffff 0%, var(--kl-blue-tint) 50%);
@@ -155,19 +155,27 @@
             padding: 80px 10%;
         }
 
-        /* 5. Mission/About: Pure White -> Brand Blue Tint (Tighter Midpoint Mix) */
-        .about-section {
+        /* 5. FAQ Section: Pure White -> Brand Blue Tint */
+        .faq-section {
             background: linear-gradient(180deg, #ffffff 0%, var(--kl-blue-tint) 50%);
+            padding: 80px 5%;
+            max-width: 100%;
+        }
+
+        /* 6. Mission/About: Solid Pure White Container */
+        .about-section {
+            background-color: #ffffff;
             padding: 80px 10%;
         }
 
-        /* 6. Footer: Pure White -> Graduated Upward to Blue Tint Base Layout */
+        /* 7. Footer: Intensified Graduated Blue Progression */
         footer {
-            background: linear-gradient(180deg, #ffffff 0%, var(--kl-blue-tint) 50%);
-            border-top: 3px solid var(--kl-blue);
+            background: linear-gradient(180deg, var(--kl-blue-tint) 0%, #d9e6f2 100%);
+            border-top: 4px solid var(--kl-blue); /* Matches premium header weight */
             color: var(--kl-dark);
             text-align: center;
-            padding: 50px 10%;
+            padding: 60px 10%;
+            margin-top: 0; /* Aligns flush with white section above */
         }
 
         /* CONTENT COMPONENT STYLES */
@@ -270,6 +278,81 @@
             border-top: 5px solid var(--kl-blue);
         }
 
+        /* NATIVE ACCORDION FAQ BLOCK STYLES */
+        .faq-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .faq-section h2 {
+            font-size: 2.5rem;
+            color: var(--kl-blue);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            padding: 18px 20px;
+            font-weight: 700;
+            color: #000;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            font-size: 1.1rem;
+            user-select: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            line-height: 1;
+            color: var(--kl-blue);
+            font-weight: bold;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+
+        .faq-content-block {
+            padding: 20px;
+            color: #555;
+            background: #fff;
+            border-top: 1px solid #eef0f2;
+            font-size: 1rem;
+        }
+
+        .faq-item,
+        .faq-item summary,
+        .faq-item .faq-content-block {
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+
+        .faq-item::before,
+        .faq-item::after,
+        .faq-item summary::before,
+        .faq-item summary::after {
+            display: none !important;
+            content: "";
+        }
+
         /* BUTTONS */
         .btn {
             display: inline-block;
@@ -303,25 +386,28 @@
             background: var(--kl-steelblue-hover);
         }
 
-        /* FOOTER BRANDING */
+        /* FOOTER BRANDING AND ACCENT LINKS */
         footer h2 {
             margin-bottom: 5px;
             color: var(--kl-blue);
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         .footer-subtitle {
-            margin: 2px 0 20px 0;
-            color: #555;
-            font-weight: 500;
+            margin: 2px 0 25px 0;
+            color: #444; 
+            font-weight: 600;
             font-size: 0.95rem;
         }
 
         footer a {
             color: var(--kl-dark);
             text-decoration: none;
-            font-weight: 600;
-            margin: 0 10px;
+            font-weight: 700;
+            margin: 0 12px;
             font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
 
         footer a:hover {
@@ -338,10 +424,11 @@
         }
 
         .footer-copyright {
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 0.85rem;
             color: #555;
-            font-weight: 500;
+            font-weight: 600;
+            line-height: 1.5;
         }
 
         /* PANCAKE MENU TOGGLE CONTROLS */
@@ -416,7 +503,7 @@
             }
 
             .hero h1 { font-size: 2.4rem; } 
-            .download-section, .features-section, .screenshots-section, .about-section { padding: 60px 5%; }
+            .download-section, .features-section, .screenshots-section, .faq-section, .about-section { padding: 60px 5%; }
             
             footer h2 { font-size: 1.5rem; }
             .footer-links { font-size: 0.85rem; gap: 8px; }
@@ -451,6 +538,7 @@
                     <div class="dropdown-content">
                         <a href="docs/getting_started.html" onclick="document.getElementById('menu-toggle').checked=false;">Getting Started</a>
                         <a href="docs/user_manual.html" onclick="document.getElementById('menu-toggle').checked=false;">User Manual</a>
+                        <a href="#faq" onclick="document.getElementById('menu-toggle').checked=false;">FAQ / Setup</a>
                         <a href="https://github.com/JTS12215/KeyLock-Password-Manager-Pro-Website/issues/new?template=bug-report.yml" onclick="document.getElementById('menu-toggle').checked=false;">Report a Bug</a>
                         <a href="https://github.com/JTS12215/KeyLock-Password-Manager-Pro-Website/issues/new?template=feature-request.yml" onclick="document.getElementById('menu-toggle').checked=false;">Request a Feature</a>
                     </div>
@@ -531,6 +619,48 @@
         </div>
     </section>
 
+    <section id="faq" class="faq-section">
+        <h2>Support & FAQ</h2>
+        <div class="faq-wrapper">
+            
+            <details class="faq-item">
+                <summary>What makes KeyLock Password Manager Pro different from legacy versions?</summary>
+                <div class="faq-content-block">
+                    The core engine has been completely rewritten from the ground up to achieve high-performance <strong>Cross-Platform Interoperability</strong>. KeyLock Pro replaces legacy Python-bound Fernet wrappers with universally recognized hardware-accelerated encryption algorithms. This migration unlocks native, cross-platform performance across Windows Desktops, Apple iOS platforms, and Android environments using a standardized secure JSON database frame.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How does the "Bring Your Own Cloud" (BYOC) data engine function?</summary>
+                <div class="faq-content-block">
+                    KeyLock Pro adheres to a strict <strong>local-first execution template</strong>. We do not operate host servers or maintain database storage layers. Your encrypted database file resides completely within your personal storage space (such as iCloud, Google Drive, Dropbox, or OneDrive). The Desktop and Mobile companion apps stream, mutate, and evaluate these local nodes strictly inside volatile device memory boundaries.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>What happens to my old entries when migrating from the legacy open-source app?</summary>
+                <div class="faq-content-block">
+                    Migration is completely automated and safe. When you launch the <strong>Windows Desktop Pro client</strong> and point it to your legacy SQLite database file, the application detects the legacy Fernet structures on the fly. Upon confirming your identity with your Master Password, the engine completely decrypts your assets and instantly rebuilds, saves, and hardens the payload using the new AES-256-GCM schema without losing data.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>What is the impact of a lost Master Password under a Zero-Knowledge model?</summary>
+                <div class="faq-content-block">
+                    Because KeyLock Pro treats user privacy as absolute, the system operates with zero backdoors or remote administration access. Your Master Password is transformed directly into an encryption key via memory-hard Argon2id parameters. <strong>We do not maintain registration keys or password logs.</strong> If you lose your Master Password, recovery is mathematically impossible. We strongly advise storing a physical copy of your Master Password in a secure, fireproof safe.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How does multi-device synchronization handle concurrent file access conflicts?</summary>
+                <div class="faq-content-block">
+                    Since data transitions occur within your personal public storage accounts, your selected cloud platform handles baseline background file changes. To protect structural integrity during concurrent edits, KeyLock Pro embeds <strong>AAD-bound transactional timestamps</strong> directly into the database metadata layers, executing a modern "last-write-wins" parsing protocol that keeps files synchronized smoothly across all devices.
+                </div>
+            </details>
+            
+        </div>
+    </section>
+
     <section id="about" class="about-section" style="max-width: 100%; margin: 0 auto;">
         <div style="max-width: 900px; margin: 0 auto; text-align: left;">
             <h1 style="color: var(--kl-blue); font-size: 2.5rem; margin-bottom: 30px; text-align: center;">The KeyLock Mission</h1>
@@ -550,12 +680,13 @@
         <p class="footer-subtitle">by <a href="https://keylocksoftware.com">KeyLock Software</a></p>
         
         <div class="footer-links">
-            <a href="#" style="color: #777; cursor: default;" onclick="return false;">Privacy Policy (Pending Review)</a>
-            <span style="color:#ccc;">|</span>
-            <a href="#" style="color: #777; cursor: default;" onclick="return false;">Terms & Conditions (Pending Review)</a>
-            <span style="color:#ccc;">|</span>
+            <a href="#" style="color: #666; cursor: default;" onclick="return false;">Privacy Policy (Pending Review)</a>
+            <span style="color: var(--kl-blue); opacity: 0.4; font-weight: bold;">|</span>
+            <a href="#" style="color: #666; cursor: default;" onclick="return false;">Terms & Conditions (Pending Review)</a>
+            <span style="color: var(--kl-blue); opacity: 0.4; font-weight: bold;">|</span>
             <a href="#top">Back to Top</a>
         </div>
+        
         <p class="footer-copyright">
             &copy; 2026 John Stone dba KeyLock Software | All Rights Reserved
         </p>
