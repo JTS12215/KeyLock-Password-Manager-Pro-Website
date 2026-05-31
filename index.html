@@ -22,6 +22,8 @@
             --kl-blue: #0056b3;
             --kl-dark: #333;
             --kl-light: #f8f9fa;
+            /* BRAND TINT GRADIENT STEP: An ultra-clean, high-end translucent shade of your blue */
+            --kl-blue-tint: #f0f5fa; 
             --kl-gold: #d4af37;
             --kl-warning: #ffc107;
             --kl-steelblue: #4682B4;
@@ -57,7 +59,7 @@
             background: #ffffff;
         }
 
-        /* NAVIGATION - Adjusted padding and height to shift the blue line down */
+        /* NAVIGATION */
         nav {
             background: #ffffff;
             border-bottom: 3px solid var(--kl-blue);
@@ -123,45 +125,45 @@
         .dropdown-content a:last-child { border-bottom: none; }
         .dropdown:hover .dropdown-content { display: block; }
 
-        /* GRADUATED GRADIENT FLOW ARCHITECTURE */
+        /* GRADUATED BLUE GRADIENT FLOW ARCHITECTURE */
         
-        /* 1. Hero: White -> Light Gray/Blue Tint */
+        /* 1. Hero: Pure White -> Brand Blue Tint */
         .hero {
             text-align: center;
-            background: linear-gradient(180deg, #fff 0%, var(--kl-light) 100%);
+            background: linear-gradient(180deg, #ffffff 0%, var(--kl-blue-tint) 100%);
             padding: 80px 10%;
         }
 
-        /* 2. Download: Pure White Base Layout */
+        /* 2. Download: Solid Pure White Container */
         .download-section {
             background-color: #ffffff;
             text-align: center;
             padding: 80px 10%;
         }
 
-        /* 3. Features: White -> Light Gray/Blue Tint */
+        /* 3. Features: Pure White -> Brand Blue Tint */
         .features-section {
             text-align: center;
-            background: linear-gradient(180deg, #fff 0%, var(--kl-light) 100%);
+            background: linear-gradient(180deg, #ffffff 0%, var(--kl-blue-tint) 100%);
             padding: 80px 10%;
         }
 
-        /* 4. Screenshots: Pure White Base Layout */
+        /* 4. Screenshots: Solid Pure White Container */
         .screenshots-section {
             text-align: center;
             background-color: #ffffff;
             padding: 80px 10%;
         }
 
-        /* 5. Mission/About: White -> Light Gray/Blue Tint */
+        /* 5. Mission/About: Pure White -> Brand Blue Tint */
         .about-section {
-            background: linear-gradient(180deg, #fff 0%, var(--kl-light) 100%);
+            background: linear-gradient(180deg, #ffffff 0%, var(--kl-blue-tint) 100%);
             padding: 80px 10%;
         }
 
-        /* 6. Footer: Graduated upward to light accent to complete the wave */
+        /* 6. Footer: Pure White -> Graduated Upward to Blue Tint Base Layout */
         footer {
-            background: linear-gradient(180deg, #ffffff 0%, var(--kl-light) 50%);
+            background: linear-gradient(180deg, #ffffff 0%, var(--kl-blue-tint) 50%);
             border-top: 3px solid var(--kl-blue);
             color: var(--kl-dark);
             text-align: center;
@@ -301,7 +303,7 @@
             background: var(--kl-steelblue-hover);
         }
 
-        /* FOOTER BRANDING AND TEXT TIMING */
+        /* FOOTER BRANDING */
         footer h2 {
             margin-bottom: 5px;
             color: var(--kl-blue);
