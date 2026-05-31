@@ -640,6 +640,27 @@
         <h2>Support & FAQ</h2>
         <div class="faq-wrapper">
             
+           <details class="faq-item">
+                <summary>What makes KeyLock Password Manager Pro different from legacy versions?</summary>
+                <div class="faq-content-block">
+                    The core engine has been completely rewritten from the ground up to achieve high-performance <strong>Cross-Platform Interoperability</strong>. KeyLock Pro replaces legacy Python-bound Fernet wrappers with universally recognized hardware-accelerated encryption algorithms. This migration unlocks native, cross-platform performance across Windows Desktops, Apple iOS platforms, and Android environments using a standardized secure JSON database frame.
+                </div>
+            </details>
+ 
+            <details class="faq-item">
+                <summary>How does the "Bring Your Own Cloud" (BYOC) data engine function?</summary>
+                <div class="faq-content-block">
+                    KeyLock Pro adheres to a strict <strong>local-first execution template</strong>. We do not operate host servers or maintain database storage layers. Your encrypted database file resides completely within your personal storage space (such as iCloud, Google Drive, Dropbox, or OneDrive). The Desktop and Mobile companion apps stream, mutate, and evaluate these local nodes strictly inside volatile device memory boundaries.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>What happens to my old entries when migrating from the legacy open-source app?</summary>
+                <div class="faq-content-block">
+                    Migration is completely automated and safe. When you launch the <strong>Windows Desktop Pro client</strong> and point it to your legacy SQLite database file, the application detects the legacy Fernet structures on the fly. Upon confirming your identity with your Master Password, the engine completely decrypts your assets and instantly rebuilds, saves, and hardens the payload using the new AES-256-GCM schema without losing data.
+                </div>
+            </details>
+            
             <details class="faq-item">
                 <summary>How do I setup my initial database (.db)?</summary>
                 <div class="faq-content-block">
@@ -654,6 +675,13 @@
                 </div>
             </details>
 
+            <details class="faq-item">
+                <summary>How does multi-device synchronization handle concurrent file access conflicts?</summary>
+                <div class="faq-content-block">
+                    Since data transitions occur within your personal public storage accounts, your selected cloud platform handles baseline background file changes. To protect structural integrity during concurrent edits, KeyLock Pro embeds <strong>AAD-bound transactional timestamps</strong> directly into the database metadata layers, executing a modern "last-write-wins" parsing protocol that keeps files synchronized smoothly across all devices.
+                </div>
+            </details>
+            
             <details class="faq-item">
                 <summary>How do I import my data from other Password Managers?</summary>
                 <div class="faq-content-block">
@@ -687,14 +715,7 @@
                     If you deploy onto a new environment or need to revert an accidental edit, select <strong>Database &gt; Restore From Backup</strong>. Navigate to your protected directory and select your targeted <strong>`.enc` backup container</strong>. Because the payload retains the strict Zero-Knowledge security boundaries of your original data frame, <strong>you must provide the exact Master Password</strong> used at the moment of backup creation to unlock and process the file swap.
                 </div>
             </details>
-
-            <details class="faq-item">
-                <summary>What makes KeyLock Password Manager Pro different from legacy versions?</summary>
-                <div class="faq-content-block">
-                    The core engine has been completely rewritten from the ground up to achieve high-performance <strong>Cross-Platform Interoperability</strong>. KeyLock Pro replaces legacy Python-bound Fernet wrappers with universally recognized hardware-accelerated encryption algorithms. This migration unlocks native, cross-platform performance across Windows Desktops, Apple iOS platforms, and Android environments using a standardized secure JSON database frame.
-                </div>
-            </details>
-
+          
             <details class="faq-item">
                 <summary>What is the impact of a lost Master Password under a Zero-Knowledge model?</summary>
                 <div class="faq-content-block">
